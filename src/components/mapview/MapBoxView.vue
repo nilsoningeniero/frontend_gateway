@@ -1,0 +1,37 @@
+<script lang="js" src="./MapBoxView.js" />
+
+<template>
+    <div v-show="!isCardLocationReady"
+        class="loading-map d-flex justify-content-center align-item-center">
+        <div class="text-center">
+            <h3>Espere por favor</h3>
+            <span>Localizando....</span>
+        </div>
+    </div>
+
+    <div v-show="isCardLocationReady"
+        class="map-container"
+        ref="mapElement">
+    </div>
+
+</template>
+
+<style scoped>
+    .map-container {
+        position: fixed;
+        width: 100vh;
+        height: 100vh; 
+        background-color: red;
+    }
+    .loading-map {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        height: 100vh;
+        left: 0px;
+        position: fixed;
+        top: 0px;
+        width: 100vh;
+        z-index: 9999;
+    }
+
+</style>
